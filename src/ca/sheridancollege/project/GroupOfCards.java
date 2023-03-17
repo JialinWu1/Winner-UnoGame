@@ -18,24 +18,25 @@ import java.util.Collections;
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
+    private ArrayList<UnoCard> unocards;
     private int size;//the size of the grouping
 
     public GroupOfCards(int size) {
         this.size = size;
     }
-
+ 
     /**
      * A method that will get the group of cards as an ArrayList
      *
      * @return the group of cards.
      */
-    public ArrayList<Card> getCards() {
-        return cards;
+    public ArrayList<UnoCard> getCards(){
+        
+        return unocards;
     }
 
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(unocards);
     }
 
     /**
@@ -51,5 +52,11 @@ public class GroupOfCards {
     public void setSize(int size) {
         this.size = size;
     }
+    
+    public UnoCard deliverCard(UnoCard unocard)
+    {
+       return unocard;
+    }
 
+  
 }//end class

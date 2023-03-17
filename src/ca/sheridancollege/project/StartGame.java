@@ -21,11 +21,6 @@ public class StartGame {
     {
         GroupOfCards myCards = new GroupOfCards(60);
         ArrayList<UnoCard> deck = myCards.getCards();
-        
-        
-        
-        
-        
         return deck;
     }
     }
