@@ -1,74 +1,54 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ca.sheridancollege.project;
+package unocard;
 
 /**
  *
- * @author kosti
+ * @author Jialin_Wu
  */
-public class UnoCard extends Card{
-
-    UnoCard() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+public class UnoCard 
+{
+    enum Color
+    {
+        Red, Blue, Green, Yellow, Wild;   //i think the video is wrong about this wild
+        
+        private static final Color[] colors = Color.values();
+        public static Color getColor(int i)
+        {
+            return Color.colors[i];
+        }
     }
-     
-    enum Color{RED,GREEN,BLUE,YELLOW};
-    enum Number{ZERO,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TWOPLUS,REVERSE,SKIP};
-    enum cardType{NUMBER,REVERSE,TWOPLUS,SKIP,WILDCARD,FOURPLUS};
-
-    private Color color;
-    private Number number;
-    private cardType cardType;
+    enum Value
+    {
+        Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, DrawTwo, Skip, Reverse, Wild, Wild_Four;
+        
+        private static final Value[] values = Value.values();
+        public static Value getValue(int i)
+        {
+            return Value.values[i];
+        }
+    }
     
-   
+    private final Color color;
+    private final Value value;
     
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    /**
-     * @return the color
-     */
-    public Color getColor() {
-        return color;
-    }
-
-    /**
-     * @param color the color to set
-     */
-    public void setColor(Color color) {
+    public UnoCard(final Color color, final Value value)
+    {
         this.color = color;
+        this.value = value;
     }
-
-    /**
-     * @return the number
-     */
-    public Number getNumber() {
-        return number;
+    public Color getColor()
+    {
+        return this.color;
     }
-
-    /**
-     * @param number the number to set
-     */
-    public void setNumber(Number number) {
-        this.number = number;
+    public Value getValue()
+    {
+        return this.value;
     }
-
-    /**
-     * @return the cardType
-     */
-    public cardType getCardType() {
-        return cardType;
+    public String toString()
+    {
+        return color + "_" + value;
     }
-
-    /**
-     * @param cardType the cardType to set
-     */
-    public void setCardType(cardType cardType) {
-        this.cardType = cardType;
-    }
-    
 }
