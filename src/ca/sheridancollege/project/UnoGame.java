@@ -303,7 +303,7 @@ public class UnoGame extends Game{
     }
     System.out.println( hand.size()+1 + ") Draw a card");
   }
-  //reversing order of players
+  //reversing order of players through the array
   public void reverse(ArrayList <UnoPlayer> players )
   {
     UnoPlayer temporary = players.get(1);
