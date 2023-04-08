@@ -97,7 +97,7 @@ public class UnoCard extends Card{
     public void setCardType(cardType cardType) {
         this.cardType = cardType;
     }
-    
+    //Method to show if the card is playable. Parameter is the card on the cardPile.
     public boolean canPlayOn(UnoCard c) {
         return cardType ==   cardType.WILDCARD  ||
                 cardType == cardType.FOURPLUS ||

@@ -33,7 +33,6 @@ public class UnoPlayer extends Player {
       
     }
 
-    private int playerIndex;
     
     public UnoPlayer(String name) {
         super(name);
@@ -45,10 +44,11 @@ public class UnoPlayer extends Player {
     public void play() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-     
+    
+     //drawing a card
     public void draw( ArrayList<UnoCard> deck) {
-        hand.add(deck.get(deck.size()-1));
-        deck.remove(deck.size()-1);
+        hand.add(deck.get(0));
+        deck.remove(0);
     }
     
     
@@ -57,16 +57,6 @@ public class UnoPlayer extends Player {
     /**
      * @return the playerIndex
      */
-    public int getPlayerIndex() {
-        return playerIndex;
-    }
 
-    /**
-     * @param playerIndex the playerIndex to set
-     */
-    public void setPlayerIndex(int playerIndex) {
-        this.playerIndex = playerIndex;
-    }
-  
     
 }

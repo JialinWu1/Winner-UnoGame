@@ -56,7 +56,7 @@ public class GroupOfCards {
     {
        return unocard;
     }
-
+  // generate a deck and shuufle it
      public ArrayList<UnoCard> generateDeck(ArrayList<UnoCard> deck)
     {
         deck = new ArrayList<>();
@@ -81,18 +81,35 @@ public class GroupOfCards {
         }
 
     }
+    
      
     
      for(int i=52;i<=55;i++)
         {
           deck.get(i).setCardType(UnoCard.cardType.WILDCARD);
-        
+          index++;
         }
       for(int i=56;i<=59;i++)
         {
           deck.get(i).setCardType(UnoCard.cardType.FOURPLUS);
-        
+          index++;
         }
+      
+      for (UnoCard.Color color : UnoCard.Color.values()) {
+        for (UnoCard.Number number : UnoCard.Number.values()) {
+            
+            deck.get(index).setColor(color);
+            deck.get(index).setNumber(number);
+            deck.get(index).setCardType(UnoCard.cardType.NUMBER);
+            index++;
+            
+        }
+  
+    }
+    
+     
+    
+    
         Collections.shuffle(deck);
         return deck;
        
