@@ -4,30 +4,57 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author kosti
  */
 public class UnoCard extends Card{
 
-    UnoCard() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-     
-    enum Color{RED,GREEN,BLUE,YELLOW};
+    enum Color{RED,GREEN,BLUE,YELLOW,};
     enum Number{ZERO,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,TWOPLUS,REVERSE,SKIP};
     enum cardType{NUMBER,REVERSE,TWOPLUS,SKIP,WILDCARD,FOURPLUS};
 
     private Color color;
     private Number number;
     private cardType cardType;
-    
+    private int cardIndex; 
    
     
+    /**
+     * @return the cardIndex
+     */
+    public int getCardIndex() {
+        return cardIndex;
+    }
+
+    /**
+     * @param cardIndex the cardIndex to set
+     */
+    public void setCardIndex(int cardIndex) {
+        this.cardIndex = cardIndex;
+    }
+
+    public UnoCard()
+    {
+    }
+   public UnoCard(Color color,Number number,cardType cardType) {
+       this.color = color;
+       this.number = number;
+       this.cardType=cardType;
+               
+       
+    }
+
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      return "this is a crad";
     }
+     
+    
+    
+    
 
     /**
      * @return the color
@@ -71,4 +98,14 @@ public class UnoCard extends Card{
         this.cardType = cardType;
     }
     
+    public boolean canPlayOn(UnoCard c) {
+        return cardType ==   cardType.WILDCARD  ||
+                cardType == cardType.FOURPLUS ||
+                color == c.getColor() ||
+                number == c.number && cardType == c.getCardType().NUMBER;
+    }
+     
+     
+     
+       
 }

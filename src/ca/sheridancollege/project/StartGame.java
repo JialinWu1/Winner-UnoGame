@@ -4,23 +4,19 @@
  */
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
 
 /**
- *
+ * 
  * @author kosti
  */
 public class StartGame {
     
     public static void main(String[] args)
-    {
+    {    
+     UnoGame game1 =  new UnoGame("Uno");
+      game1.play();
     
     }
+}
     
-    public ArrayList<UnoCard> generateDeck()
-    {
-        GroupOfCards myCards = new GroupOfCards(60);
-        ArrayList<UnoCard> deck = myCards.getCards();
-        return deck;
-    }
-    }
+    

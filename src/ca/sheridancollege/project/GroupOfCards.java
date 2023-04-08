@@ -31,7 +31,6 @@ public class GroupOfCards {
      * @return the group of cards.
      */
     public ArrayList<UnoCard> getCards(){
-        
         return unocards;
     }
 
@@ -58,5 +57,48 @@ public class GroupOfCards {
        return unocard;
     }
 
+     public ArrayList<UnoCard> generateDeck(ArrayList<UnoCard> deck)
+    {
+        deck = new ArrayList<>();
+        
+        
+        for(int i=1;i<=size;i++)
+        {
+           UnoCard card = new UnoCard();
+           deck.add(card);
+                   
+        }
+       
+        int index = 0;
+    for (UnoCard.Color color : UnoCard.Color.values()) {
+        for (UnoCard.Number number : UnoCard.Number.values()) {
+            
+            deck.get(index).setColor(color);
+            deck.get(index).setNumber(number);
+            deck.get(index).setCardType(UnoCard.cardType.NUMBER);
+            index++;
+            
+        }
+
+    }
+     
+    
+     for(int i=52;i<=55;i++)
+        {
+          deck.get(i).setCardType(UnoCard.cardType.WILDCARD);
+        
+        }
+      for(int i=56;i<=59;i++)
+        {
+          deck.get(i).setCardType(UnoCard.cardType.FOURPLUS);
+        
+        }
+        Collections.shuffle(deck);
+        return deck;
+       
+    
+    
+    }
+    }
   
-}//end class
+//end class
