@@ -13,14 +13,16 @@ import java.util.Scanner;
  */
 public class UnoGame extends Game{
   
-  private static UnoGame unoGame;
+  private static UnoGame unoGame; //UnoGame static and private
   private ArrayList<UnoCard>   cardPile  = new ArrayList<>();
   private ArrayList<UnoPlayer> players   = new ArrayList<>();
   
-  private UnoGame(String name) {
+  //private constuctor
+  private UnoGame(String name)  {  
     super(name);
   }
   
+  // getInstance method to create only one UnoGame(SingleTon design pattern)
   public static UnoGame getInstance()
   {
     if(unoGame == null)
