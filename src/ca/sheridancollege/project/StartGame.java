@@ -15,7 +15,7 @@ public class StartGame {
     
     public static void main(String[] args)
     {    
-     UnoGame game1 =  new UnoGame("Uno");
+     UnoGame game1 =  UnoGame.getInstance();
       game1.play();
      
     }

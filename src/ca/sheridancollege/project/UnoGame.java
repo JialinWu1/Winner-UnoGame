@@ -5,7 +5,6 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -14,12 +13,21 @@ import java.util.Scanner;
  */
 public class UnoGame extends Game{
   
-  
+  private static UnoGame unoGame;
   private ArrayList<UnoCard>   cardPile  = new ArrayList<>();
   private ArrayList<UnoPlayer> players   = new ArrayList<>();
   
-  public UnoGame(String name) {
+  private UnoGame(String name) {
     super(name);
+  }
+  
+  public static UnoGame getInstance()
+  {
+    if(unoGame == null)
+    {
+       unoGame = new UnoGame("UnoGame"); 
+    }
+    return unoGame;
   }
   
   
@@ -150,12 +158,19 @@ public class UnoGame extends Game{
     {
         while (true)
         {
+            try{
       System.out.println(("Choose the 'number' of the card you are playing: "));
-      cardvalue = input4.nextInt();
+      cardvalue = Integer.parseInt(input4.nextLine());
       if(cardvalue>0 && cardvalue <hand.size()+2)
          { break;}
       
        }
+         catch( NumberFormatException e)
+         {
+               
+         }
+            }
+       
       if(cardvalue == hand.size()+1)
       {
         
