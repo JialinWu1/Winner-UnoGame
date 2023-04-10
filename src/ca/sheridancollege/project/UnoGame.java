@@ -164,7 +164,9 @@ public class UnoGame extends Game{
       System.out.println(("Choose the 'number' of the card you are playing: "));
       cardvalue = Integer.parseInt(input4.nextLine());
       if(cardvalue>0 && cardvalue <hand.size()+2)
-         { break;}
+         { 
+             System.out.println("You drew a card");
+             break;}
       
        }
          catch( NumberFormatException e)
