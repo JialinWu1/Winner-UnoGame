@@ -49,6 +49,7 @@ public class UnoPlayer extends Player {
     public void draw( ArrayList<UnoCard> deck) {
         hand.add(deck.get(0));
         deck.remove(0);
+        System.out.println("You drew a card");
     }
     
     

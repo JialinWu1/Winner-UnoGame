@@ -47,11 +47,7 @@ public class UnoCard extends Card{
        
     }
 
-    @Override
-    public String toString() {
-      return "this is a crad";
-    }
-     
+    
     
     
     
